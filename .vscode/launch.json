@@ -1,0 +1,23 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "gdb",
+      "request": "attach",
+      "name": "Attach to gdbserver",
+      "executable": "${workspaceFolder}/app_dynamic",
+      "target": "127.0.0.1:1234",
+      "remote": true,
+      "cwd": "${workspaceRoot}",
+      "gdbpath": "/usr/bin/gdb-multiarch",
+      "autorun": [
+        "set architecture arm",
+        "set sysroot /usr/arm-linux-gnueabihf",
+        "set so-lib-search-path /usr/arm-linux-gnueabihf/lib"
+      ]
+    }
+  ]
+}
